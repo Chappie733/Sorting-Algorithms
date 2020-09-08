@@ -16,7 +16,6 @@ def is_sorted(arr):
 			return False
 	return True
 
-# returns -> arr, new idx, if some values out of order have been found, if the array is sorted
 def bubble(arr, *args):
 	idx = int(args[0])
 	if arr[idx] > arr[idx+1]:
