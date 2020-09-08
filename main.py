@@ -52,7 +52,6 @@ def merge(arr, *args):
 		sub.remove(second)
 		removed += 1
 		sub.insert(index, [])
-		elements_amt = len(first) + len(second)
 		while len(first) != 0 or len(second) != 0:
 			minimum = sys.maxsize
 			for i in first:
