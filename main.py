@@ -16,6 +16,7 @@ def is_sorted(arr):
 			return False
 	return True
 
+# returns -> arr, new idx, if some values out of order have been found, if the array is sorted
 def bubble(arr, *args):
 	idx = int(args[0])
 	if arr[idx] > arr[idx+1]:
@@ -26,12 +27,12 @@ def bubble(arr, *args):
 
 def selection(arr, *args):
 	idx = args[0]
-    min_index = idx
-    for j in range(idx+1, len(arr)):
-        if arr[j] < arr[min_index]:
-            min_index = j
-    arr[idx], arr[min_index] = arr[min_index], arr[idx]
-    return arr, idx+1
+	min_index = idx
+	for j in range(idx+1, len(arr)):
+		if arr[j] < arr[min_index]:
+			min_index = j
+	arr[idx], arr[min_index] = arr[min_index], arr[idx]
+	return arr, idx+1
 
 # merge sort
 def merge(arr, *args):
@@ -53,7 +54,7 @@ def merge(arr, *args):
 		removed += 1
 		sub.insert(index, [])
 		while len(first) != 0 or len(second) != 0:
-			minimum = min(first[0], second[0])
+			minimum = min(first+second)
 			sub[index].append(minimum)
 			if minimum in first:
 				first.remove(minimum)
