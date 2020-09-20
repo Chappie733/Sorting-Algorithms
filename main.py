@@ -53,13 +53,7 @@ def merge(arr, *args):
 		removed += 1
 		sub.insert(index, [])
 		while len(first) != 0 or len(second) != 0:
-			minimum = sys.maxsize
-			for i in first:
-				if i < minimum:
-					minimum = i
-			for i in second:
-				if i < minimum:
-					minimum = i
+			minimum = min(first[0], second[0])
 			sub[index].append(minimum)
 			if minimum in first:
 				first.remove(minimum)
